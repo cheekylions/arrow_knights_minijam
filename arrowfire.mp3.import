@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/arrowfire.mp3-745946f1b7efdef4c6edafc3d068d251.mp3str"
+
+[deps]
+
+source_file="res://arrowfire.mp3"
+dest_files=[ "res://.import/arrowfire.mp3-745946f1b7efdef4c6edafc3d068d251.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

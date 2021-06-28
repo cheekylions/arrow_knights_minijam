@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/snakeattack.mp3-dd9693a1c9ba982ace6d44a9821dfefe.mp3str"
+
+[deps]
+
+source_file="res://snakeattack.mp3"
+dest_files=[ "res://.import/snakeattack.mp3-dd9693a1c9ba982ace6d44a9821dfefe.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

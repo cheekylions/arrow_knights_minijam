@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Godot-3-2D-CRT-Shader-master/crt_material.tres" type="Material" id=1]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+margin_right = 217.0
+margin_bottom = 193.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}

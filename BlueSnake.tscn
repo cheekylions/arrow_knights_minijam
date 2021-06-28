@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Snake.gd" type="Script" id=1]
+[ext_resource path="res://bluesnakeidle.png" type="Texture" id=2]
+[ext_resource path="res://bluesnakejab.png" type="Texture" id=3]
+[ext_resource path="res://bluesnakemove.png" type="Texture" id=4]
+[ext_resource path="res://snakeattack.wav" type="AudioStream" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.00735, 4.95021 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "move",
+"speed": 5.0
+} ]
+
+[node name="BlueSnake" type="KinematicBody2D" groups=[
+"enemies",
+]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource( 1 )
+health = 25
+speed = 40
+damage = 3
+wait_time = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 5, 5 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+centered = false
+
+[node name="MoveOff" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="MoveOn" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="SnakeAttack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+[connection signal="timeout" from="MoveOff" to="." method="_on_CoolDown_timeout"]
+[connection signal="timeout" from="MoveOn" to="." method="_on_MoveOn_timeout"]
